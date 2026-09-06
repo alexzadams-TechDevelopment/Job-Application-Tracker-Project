@@ -5,5 +5,6 @@ namespace JobApplicationTracker.Data
 {
     public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : IdentityDbContext(options)
     {
+    public DbSet<JobApplicationTracker.Models.Job> Job { get; set; } = default!;
     }
 }

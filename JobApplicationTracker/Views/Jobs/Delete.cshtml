@@ -28,10 +28,34 @@
     </dl>
     <dl class="row">
         <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+    </dl>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.JobUrl)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.JobUrl)
+        </dd>
+    </dl>
+    <dl class="row">
+        <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.JobStatus)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.JobStatus)
+        </dd>
+    </dl>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DateApplied)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DateApplied)
         </dd>
     </dl>
     <form asp-action="Delete">

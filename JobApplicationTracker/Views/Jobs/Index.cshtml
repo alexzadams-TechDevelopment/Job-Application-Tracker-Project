@@ -19,7 +19,16 @@
                 @Html.DisplayNameFor(model => model.JobDescription)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JobUrl)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.JobStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateApplied)
             </th>
             <th></th>
         </tr>
@@ -34,7 +43,16 @@
                 @Html.DisplayFor(model => item.JobDescription)
             </td>
             <td>
+                @Html.DisplayFor(model => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.JobUrl)
+            </td>
+            <td>
                 @Html.DisplayFor(model => item.JobStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.DateApplied)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

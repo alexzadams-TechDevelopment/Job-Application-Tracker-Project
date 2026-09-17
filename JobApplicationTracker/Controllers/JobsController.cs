@@ -48,7 +48,7 @@ public class JobsController : Controller
     // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create([Bind("Id,JobName,JobDescription,JobStatus, Location, JobUrl, DateApplied")] Job job)
+    public async Task<IActionResult> Create([Bind("Id,JobName,JobDescription,JobStatus, Location, JobUrl, DateApplied, AdditionalNotes")] Job job)
     {
         if (ModelState.IsValid)
         {
@@ -80,7 +80,7 @@ public class JobsController : Controller
     // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(int? id, [Bind("Id,JobName,JobDescription,JobStatus")] Job job)
+    public async Task<IActionResult> Edit(int? id, [Bind("Id,JobName,JobDescription,JobStatus, Location, JobUrl, DateApplied, AdditionalNotes")] Job job)
     {
         if (id != job.Id)
         {

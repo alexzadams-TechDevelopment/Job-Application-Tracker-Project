@@ -11,6 +11,8 @@
         public string Location { get; set; }
         public string? AdditionalNotes { get; set; }
 
+        public string? UserId { get; set; }
+
         public Job()
         {
             

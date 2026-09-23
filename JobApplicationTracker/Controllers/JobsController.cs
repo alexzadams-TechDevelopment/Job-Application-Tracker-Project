@@ -3,20 +3,31 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using JobApplicationTracker.Models;
 using JobApplicationTracker.Data;
+using Microsoft.AspNetCore.Identity;
 
 public class JobsController : Controller
 {
     private readonly ApplicationDbContext _context;
+    private readonly UserManager<ApplicationUser> _userManager;
 
-    public JobsController(ApplicationDbContext context)
+    public JobsController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
     {
         _context = context;
+        _userManager = userManager;
     }
 
     // GET: JOBS
     public async Task<IActionResult> Index()    
     {
-        return View(await _context.Job.ToListAsync());
+        //return View(await _context.Job.ToListAsync());
+
+        var userId = _userManager.GetUserId(User);
+
+        var jobs = await _context.Job
+            .Where(j => j.UserId == userId) //To only retreive the data based on the account.
+            .ToListAsync();
+
+        return View(jobs);
     }
 
     // GET: JOBS/Details/5
@@ -50,12 +61,19 @@ public class JobsController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create([Bind("Id,JobName,JobDescription,JobStatus, Location, JobUrl, DateApplied, AdditionalNotes")] Job job)
     {
+
+
+
         if (ModelState.IsValid)
         {
+            job.UserId = _userManager.GetUserId(User);
+
             _context.Add(job);
             await _context.SaveChangesAsync();
+
             return RedirectToAction(nameof(Index));
         }
+
         return View(job);
     }
 

@@ -4,7 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using JobApplicationTracker.Models;
 using JobApplicationTracker.Data;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
+[Authorize]
 public class JobsController : Controller
 {
     private readonly ApplicationDbContext _context;

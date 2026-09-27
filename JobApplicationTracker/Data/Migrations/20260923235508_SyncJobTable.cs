@@ -5,7 +5,7 @@
 namespace JobApplicationTracker.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class updatedJobDetails : Migration
+    public partial class SyncJobTable : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -26,11 +26,7 @@ namespace JobApplicationTracker.Data.Migrations
                 oldClrType: typeof(string),
                 oldType: "nvarchar(max)");
 
-            migrationBuilder.AddColumn<string>(
-                name: "AdditionalNotes",
-                table: "Job",
-                type: "nvarchar(max)",
-                nullable: true);
+
         }
 
         /// <inheritdoc />
@@ -38,6 +34,10 @@ namespace JobApplicationTracker.Data.Migrations
         {
             migrationBuilder.DropColumn(
                 name: "AdditionalNotes",
+                table: "Job");
+
+            migrationBuilder.DropColumn(
+                name: "UserId",
                 table: "Job");
 
             migrationBuilder.AlterColumn<string>(

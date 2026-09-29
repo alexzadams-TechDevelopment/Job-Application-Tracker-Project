@@ -1,0 +1,10 @@
+﻿body{
+
+}
+
+.introBox {
+    background-image: url("/Images/introBoxImg1.jpg"); /*Open Source Image origin: https://unsplash.com/photos/group-of-people-using-laptop-computer-QckxruozjRg */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

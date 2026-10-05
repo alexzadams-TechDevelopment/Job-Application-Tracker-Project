@@ -1,0 +1,116 @@
+﻿body{
+
+}
+
+
+
+
+
+.introBox1, .introBox2 {
+    margin: 100px;
+    margin-bottom: 200px;
+}
+
+
+
+.introImg1, .introImg2 {
+    width: 600px;
+    height: auto;
+    max-width: 50%;
+    border-radius: 12px;
+}
+
+.intro1Subox, .intro2Subox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.headerText {
+    font-size: 32px;
+    flex: 1;
+}
+
+.introHeader1 {
+    font-size: 50px;
+    text-align: center;
+    justify-content: space-between;
+    margin-bottom: 150px;
+}
+
+.introHeader2 {
+    font-size: 50px;
+    text-align: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.introHeader3 {
+    font-size: 50px;
+    text-align: center;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.infoBox1 {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 100px;
+}
+
+.subBox {
+    background-color: #3967ff79;
+    margin-right: 100px;
+    width: 400px;
+    height: auto;
+    border-radius: 12px;
+    padding: 40px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.subText{
+    font-size: 19px;
+}
+
+.subHeader{
+    margin-bottom: 30px;
+}
+
+.subImg {
+    width: 200px;
+    height: auto;
+    max-width: 100%;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}

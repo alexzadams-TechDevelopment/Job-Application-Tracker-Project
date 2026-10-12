@@ -13,22 +13,38 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.JobName)
+                @* @Html.DisplayNameFor(model => model.JobName) *@
+
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSort"]">
+                    @ViewData["NameTitle"]
+
+                </a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.JobDescription)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Location)
+                @* @Html.DisplayNameFor(model => model.Location) *@
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["LocationSort"]">
+                    @ViewData["LocationTitle"]
+                </a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.JobUrl)
+ 
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.JobStatus)
+                @* @Html.DisplayNameFor(model => model.JobStatus) *@
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["StatusSort"]">
+                    @ViewData["StatusTitle"]
+                </a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DateApplied)
+                @* @Html.DisplayNameFor(model => model.DateApplied) *@
+
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSort"]">
+                    @ViewData["DateTitle"]
+                </a>
             </th>
             <th></th>
         </tr>

@@ -20,7 +20,7 @@ public class JobsController : Controller
     }
 
     // GET: JOBS
-    public async Task<IActionResult> Index(string sortOrder)    
+    public async Task<IActionResult> Index(string sortOrder, string searchString)    
     {
         //return View(await _context.Job.ToListAsync());
 
@@ -30,20 +30,13 @@ public class JobsController : Controller
             .Where(j => j.UserId == userId); //To only retreive the data based on the account.
                                              //.ToListAsync();
 
-        //switch (sortOrder)
-        //{
-        //    case "date_desc": //Sort by newer Dates
-        //        jobs = jobs.OrderByDescending(j => j.DateApplied);
-        //        break;
 
-        //    case "date_asc": //Sort by older Dates
-        //        jobs = jobs.OrderBy(j => j.DateApplied);
-        //        break;
+        if (!string.IsNullOrWhiteSpace(searchString))
+        {
+            jobs = jobs.Where(j => j.JobName.Contains(searchString));
+        }
+        ViewData["CurrentFilter"] = searchString;
 
-        //    default:
-        //        jobs = jobs.OrderByDescending(j => j.DateApplied);
-        //        break;
-        //}
 
 
         switch (sortOrder)

@@ -4,19 +4,39 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<link rel="stylesheet" href="~/css/JobList.css" />
+
+<h1>Welcome [User]</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
+
+
+
+
+<form asp-action="Index" method="get" class="navigation">
+    <input type="text"
+           name="searchString"
+           value="@ViewData["CurrentFilter"]"
+           placeholder="Enter Job Name..." />
+
+    <button type="submit" class="searchBtn">Search</button>
+
+    <a asp-action="Index" class="ResetBtn">Reset Search</a>
+</form>
+
 <table class="table">
     <thead>
         <tr>
             <th>
                 @* @Html.DisplayNameFor(model => model.JobName) *@
 
-                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSort"]">
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSort"]"
+                   asp-route-searchString="@ViewData["CurrentFilter"]">
                     @ViewData["NameTitle"]
+                    
 
                 </a>
             </th>
@@ -25,25 +45,32 @@
             </th>
             <th>
                 @* @Html.DisplayNameFor(model => model.Location) *@
-                <a asp-action="Index" asp-route-sortOrder="@ViewData["LocationSort"]">
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["LocationSort"]"
+                   asp-route-searchString="@ViewData["CurrentFilter"]">
                     @ViewData["LocationTitle"]
+                    
                 </a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.JobUrl)
+                
  
             </th>
             <th>
                 @* @Html.DisplayNameFor(model => model.JobStatus) *@
-                <a asp-action="Index" asp-route-sortOrder="@ViewData["StatusSort"]">
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["StatusSort"]"
+                   asp-route-searchString="@ViewData["CurrentFilter"]">
                     @ViewData["StatusTitle"]
+                    
                 </a>
             </th>
             <th>
                 @* @Html.DisplayNameFor(model => model.DateApplied) *@
 
-                <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSort"]">
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSort"]"
+                   asp-route-searchString="@ViewData["CurrentFilter"]">
                     @ViewData["DateTitle"]
+                    
                 </a>
             </th>
             <th></th>

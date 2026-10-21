@@ -5,20 +5,31 @@
 }
 
 <link rel="stylesheet" href="~/css/JobList.css" />
+<script src="~/js/job.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <h1>Welcome [User]</h1>
 
+<div class="dashboard">
+   <div class="status-summary">
+       <h3>Job Application Summary</h3>
 
-<div class="status-summary">
-    <h3>Job Application Summary</h3>
-
-    <p>unApplied: <span id="unAppliedCount">0</span></p>
-    <p>pending: <span id="pendingCount">0</span></p>
-    <p>noReply: <span id="noReplyCount">0</span></p>
-    <p>Rejected: <span id="rejectedCount">0</span></p>
-    <p>interview: <span id="interviewCount">0</span></p>
-    <p>success: <span id="successCount">0</span></p>
+       <p>unApplied: <span id="unAppliedCount">0</span></p>
+       <p>pending: <span id="pendingCount">0</span></p>
+       <p>noReply: <span id="noReplyCount">0</span></p>
+       <p>Rejected: <span id="rejectedCount">0</span></p>
+       <p>interview: <span id="interviewCount">0</span></p>
+       <p>success: <span id="successCount">0</span></p>
     
+   </div>
+
+
+
+   <div class="container">
+       <canvas id="pie-chart"></canvas>
+   </div>
+
 </div>
 
 
@@ -26,6 +37,9 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
+
+
 
 
 <form asp-action="Index" method="get" class="navigation">
@@ -43,7 +57,6 @@
     <thead>
         <tr>
             <th>
-                @* @Html.DisplayNameFor(model => model.JobName) *@
 
                 <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSort"]"
                    asp-route-searchString="@ViewData["CurrentFilter"]">
@@ -56,7 +69,6 @@
                 @Html.DisplayNameFor(model => model.JobDescription)
             </th>
             <th>
-                @* @Html.DisplayNameFor(model => model.Location) *@
                 <a asp-action="Index" asp-route-sortOrder="@ViewData["LocationSort"]"
                    asp-route-searchString="@ViewData["CurrentFilter"]">
                     @ViewData["LocationTitle"]
@@ -69,7 +81,6 @@
  
             </th>
             <th>
-                @* @Html.DisplayNameFor(model => model.JobStatus) *@
                 <a asp-action="Index" asp-route-sortOrder="@ViewData["StatusSort"]"
                    asp-route-searchString="@ViewData["CurrentFilter"]">
                     @ViewData["StatusTitle"]
@@ -77,7 +88,6 @@
                 </a>
             </th>
             <th>
-                @* @Html.DisplayNameFor(model => model.DateApplied) *@
 
                 <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSort"]"
                    asp-route-searchString="@ViewData["CurrentFilter"]">
@@ -119,57 +129,4 @@
     </tbody>
 </table>
 
-
-<script>
-//TODO:: Create JS file for javascript features.
-
-    document.addEventListener("DOMContentLoaded", function () {
-        let unApplied = 0;
-        let pending = 0;
-        let noReply = 0;
-        let rejected = 0;
-        let interview = 0;
-        let success = 0;
-
-        // Get all job rows from the table
-        const rows = document.querySelectorAll("table tbody tr");
-
-        rows.forEach(function (row) {
-            // Status is the fifth column (index 4)
-            const status = row.cells[4].textContent.trim().toLowerCase();
-
-
-
-            if (status === "unapplied") {
-                unApplied++;
-            }
-            else if (status === "pending") {
-                pending++;
-            }
-            else if (status === "no reply") {
-                noReply++;
-            }
-            else if (status === "rejected") {
-                rejected++;
-            }           
-            else if (status === "interview") {
-                interview++;
-            }     
-            else if (status === "success") {
-                success++;
-            }
-        });
-
-        document.getElementById("unAppliedCount").textContent = unApplied;
-        document.getElementById("pendingCount").textContent = pending;
-        document.getElementById("noReplyCount").textContent = noReply;
-        document.getElementById("rejectedCount").textContent = rejected;
-        document.getElementById("interviewCount").textContent = interview;
-        document.getElementById("successCount").textContent = success;
-        
-
-
-
-    });
-</script>
 

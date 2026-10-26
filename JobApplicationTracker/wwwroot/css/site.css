@@ -21,13 +21,24 @@ body {
     margin-bottom: 60px;
     min-height: 100vh;
     background-attachment: fixed;
-    background: radial-gradient(circle at 50% 50%, #ffffff 0%, #e3e3e3 100%);
+    background: radial-gradient(circle at 50% 50%, #ffffff 0%, #dedede 100%) !important;
 }
 
 .navbar {
-
+    /*    background: radial-gradient(circle at 50% 50%, #ffffff 0%, #e8e8e8 100%);*/
+    background: linear-gradient(90deg, #e0eeff 0%, #ffffff 25%, #f0f7ff 50%, #ffffff 75%, #e0eeff 100%) !important;
+    height: 100px;
 }
 
+
+.main-nav {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
 
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
@@ -39,3 +50,73 @@ body {
   text-align: start;
 }
 
+
+/* To improve mobile layout */
+@media (max-width: 768px) {
+    .navbar-layout {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .main-nav {
+        position: static;
+        transform: none;
+        width: 100%;
+        justify-content: center;
+        order: 3;
+    }
+
+    .account-nav {
+        margin-left: auto;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Navbar layout*/
+.custom-navbar {
+    background: radial-gradient(circle at 50% 50%, #ffffff 0%, #e8e8e8 100%);
+    height: 100px;
+}
+
+    /* navbar title */
+    .custom-navbar .navbar-brand {
+        color: black;
+        font-family: Arial, sans-serif;
+        font-size: 28px;
+        font-weight: bold;
+        margin-left: 25px;
+    }
+
+    /* Navbar links */
+    .custom-navbar .main-nav .nav-link {
+        color: black !important;
+        font-family: Arial, sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    /* Login and Register links */
+    /*.custom-navbar .navbar-collapse > ul,
+    .custom-navbar .navbar-collapse > div {
+        font-family: Arial, sans-serif;
+        font-size: 20px !important;
+        padding-right: 25px;
+    }*/
+
+
+    /* Navbar hover*/
+    .custom-navbar .nav-link:hover,
+    .custom-navbar .navbar-brand:hover {
+        color: blue !important;
+        text-decoration: underline;
+    }

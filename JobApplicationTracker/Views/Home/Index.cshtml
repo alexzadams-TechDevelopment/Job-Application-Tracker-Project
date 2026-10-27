@@ -7,23 +7,33 @@
 
 
 <div class="introBox">
-    <div class="introSubBox">
-        <h1 class="introHeader">Title</h1>
-        <p class="introText">Text goes here</p>
+    <video autoplay muted playsinline>
+        <source src="~/Videos/introVideo.mp4" type="video/mp4" /> @* Open Source Video origin: https://www.pexels.com/video/mesmerizing-abstract-light-loop-background-39310521/ *@
+        Error: Your browser does not support the video.  
+    </video>
 
-        <button class="btn1">About</button>
-        <button class="btn1">Track Now</button>
+    <div class="introSubBox">
+
+
+
+        <h1 class="introHeader">Career Track</h1>
+        <p class="introText">Tracking Made Simple</p>
+
+        <button class="btn1"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About">About</a></button>
+        <button class="btn1"><a class="nav-link text-dark" asp-area="" asp-controller="Jobs" asp-action="Index">Track Now</a></button>
+
     </div>
 
 </div>
 
 <div class ="infoBox1">
-    <h1>Title 1</h1>
+    <h1>Tracking Applications Made Simple</h1>
     <div class="info1Subox">
-        <p class="subText">Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. 
-            In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
-            Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. 
-            Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+        <p class="subText">Welcome! Our goal with Career Track is to allow users to manage and understand the progress with each individual
+            job application within an single simplified table to help users to manage the careers that they apply to. Career Track is made
+            to be easy and simple allowing users to start right away and store the different applications made to keep track of each individual
+            applications made involving the role, company name, the time applied and status the application is currently in while tracking.
+        </p>
 
         
         <img src="~/Images/indexImg1.jpg" alt="Logo" class="infoImg1">  @* Open Source Image origin: https://unsplash.com/photos/a-person-holding-a-piece-of-paper-over-a-laptop-9PwLeZA-RGc *@
@@ -32,15 +42,15 @@
 </div>
 
 <div class ="infoBox1">
-    <h1>Title 2</h1>
+    <h1>Where To Begin</h1>
     
 
     <div class="info1Subox">
         <p class="subText">
-            Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat.
-            In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
-            Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere.
-            Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+            Begin tracking your applications today by creating an account to start a new table to add, store and edit the job applications that
+            you have made. Applications that are added to your personal table will be interactable and easily accessible with data sorting and
+            search features made avaliable. Additionally, job statuses will be displayed on a visable dashboard which gives you a graphical 
+            perspective of the progress and stages of each of your job applications are currently in to simplify managing job applications.
         </p>
         <img src="~/Images/introBoxImg1.jpg" alt="Logo" class="infoImg1">  @* Open Source Image origin: https://unsplash.com/photos/group-of-people-using-laptop-computer-QckxruozjRg *@
     </div>

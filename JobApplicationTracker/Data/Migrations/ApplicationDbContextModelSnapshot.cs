@@ -98,17 +98,20 @@ namespace JobApplicationTracker.Data.Migrations
                     b.Property<string>("AdditionalNotes")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("CompanyName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime?>("DateApplied")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("JobDescription")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("JobName")
+                    b.Property<string>("JobStatus")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("JobStatus")
+                    b.Property<string>("JobTitle")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

@@ -107,7 +107,7 @@ namespace JobApplicationTracker.Data.Migrations
                     b.Property<string>("JobDescription")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("JobName")
+                    b.Property<string>("JobTitle")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

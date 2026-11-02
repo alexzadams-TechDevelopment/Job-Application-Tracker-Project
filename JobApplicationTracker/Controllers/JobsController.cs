@@ -33,7 +33,7 @@ public class JobsController : Controller
 
         if (!string.IsNullOrWhiteSpace(searchString))
         {
-            jobs = jobs.Where(j => j.JobName.Contains(searchString));
+            jobs = jobs.Where(j => j.JobTitle.Contains(searchString));
         }
         ViewData["CurrentFilter"] = searchString;
 
@@ -50,11 +50,11 @@ public class JobsController : Controller
                 break;
 
             case "name_asc":
-                jobs = jobs.OrderBy(j => j.JobName);
+                jobs = jobs.OrderBy(j => j.JobTitle);
                 break;
 
             case "name_desc":
-                jobs = jobs.OrderByDescending(j => j.JobName);
+                jobs = jobs.OrderByDescending(j => j.JobTitle);
                 break;
 
             case "status_asc":
@@ -175,7 +175,7 @@ public class JobsController : Controller
     // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create([Bind("Id,JobName,JobDescription,JobStatus, Location, JobUrl, DateApplied, AdditionalNotes")] Job job)
+    public async Task<IActionResult> Create([Bind("Id,JobTitle,JobDescription,JobStatus, Location, JobUrl, DateApplied, AdditionalNotes")] Job job)
     {
 
 
@@ -216,7 +216,7 @@ public class JobsController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Edit(
     int id,
-    [Bind("Id,JobName,JobDescription,JobStatus,Location,JobUrl,DateApplied,AdditionalNotes")] Job job)
+    [Bind("Id,JobTitle,JobDescription,JobStatus,Location,JobUrl,DateApplied,AdditionalNotes")] Job job)
     {
         if (id != job.Id)
         {
@@ -235,7 +235,7 @@ public class JobsController : Controller
 
         if (ModelState.IsValid)
         {
-            existingJob.JobName = job.JobName;
+            existingJob.JobTitle = job.JobTitle;
             existingJob.JobDescription = job.JobDescription;
             existingJob.JobStatus = job.JobStatus;
             existingJob.Location = job.Location;

@@ -175,7 +175,8 @@ public class JobsController : Controller
     // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create([Bind("Id,JobTitle,JobDescription,JobStatus, Location, JobUrl, DateApplied, AdditionalNotes")] Job job)
+                                            
+    public async Task<IActionResult> Create([Bind("Id,JobTitle,CompanyName,JobDescription,JobStatus,Location,JobUrl,DateApplied,AdditionalNotes")] Job job)
     {
 
 

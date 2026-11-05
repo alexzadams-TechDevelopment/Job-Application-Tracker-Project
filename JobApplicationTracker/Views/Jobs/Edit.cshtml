@@ -19,6 +19,11 @@
                 <span asp-validation-for="JobTitle" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="CompanyName" class="control-label"></label>
+                <input asp-for="CompanyName" class="form-control" />
+                <span asp-validation-for="CompanyName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="JobDescription" class="control-label"></label>
                 <input asp-for="JobDescription" class="form-control" />
                 <span asp-validation-for="JobDescription" class="text-danger"></span>
@@ -49,7 +54,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="DateApplied" class="control-label"></label>
-                <input asp-for="DateApplied" class="form-control" />
+                <input asp-for="DateApplied" type="date" class="form-control" />
                 <span asp-validation-for="DateApplied" class="text-danger"></span>
             </div>
             <div class="form-group">

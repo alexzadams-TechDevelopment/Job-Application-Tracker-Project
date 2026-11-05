@@ -1,5 +1,4 @@
 ﻿
-    //TODO:: Create JS file for javascript features.
     document.addEventListener("DOMContentLoaded", function () {
         let unApplied = 0;
         let pending = 0;
@@ -14,7 +13,7 @@
         rows.forEach(function (row) {
 
             // Status is the fifth column (index 4)
-            const status = row.cells[4].textContent.trim().toLowerCase();
+            const status = row.cells[5].textContent.trim().toLowerCase();
 
 
 

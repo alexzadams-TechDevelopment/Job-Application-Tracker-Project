@@ -9,27 +9,27 @@
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<h1>Welcome [User]</h1>
+<h1 class="h1">Welcome [User]</h1>
 
 <div class="dashboard">
-   <div class="status-summary">
-       <h3>Job Application Summary</h3>
+    <div class="status-summary">
 
-       <p>unApplied: <span id="unAppliedCount">0</span></p>
-       <p>pending: <span id="pendingCount">0</span></p>
-       <p>noReply: <span id="noReplyCount">0</span></p>
-       <p>Rejected: <span id="rejectedCount">0</span></p>
-       <p>interview: <span id="interviewCount">0</span></p>
-       <p>success: <span id="successCount">0</span></p>
-    
-   </div>
+        <h3>Job Application Summary</h3>
 
+        <ul>
+            <li class="unApplied">Unapplied: <span id="unAppliedCount">0</span></li>
+            <li class="pending">Pending: <span id="pendingCount">0</span></li>
+            <li class="noReply">No Reply: <span id="noReplyCount">0</span></li>
+            <li class="rejected">Rejected: <span id="rejectedCount">0</span></li>
+            <li class="interview">Interview: <span id="interviewCount">0</span></li>
+            <li class="success">Success: <span id="successCount">0</span></li>
+        </ul>
 
+    </div>
 
-   <div class="container">
-       <canvas id="pie-chart"></canvas>
-   </div>
-
+    <div class="container">
+        <canvas id="pie-chart"></canvas>
+    </div>
 </div>
 
 
@@ -64,6 +64,9 @@
                     
 
                 </a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.JobDescription)
@@ -103,6 +106,9 @@
         <tr>
             <td>
                 @Html.DisplayFor(model => item.JobTitle)
+            </td>
+            <td> 
+                @Html.DisplayFor(model => item.CompanyName) 
             </td>
             <td>
                 @Html.DisplayFor(model => item.JobDescription)

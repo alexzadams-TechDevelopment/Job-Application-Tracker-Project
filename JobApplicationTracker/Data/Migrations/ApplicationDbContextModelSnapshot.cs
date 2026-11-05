@@ -101,8 +101,8 @@ namespace JobApplicationTracker.Data.Migrations
                     b.Property<string>("CompanyName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("DateApplied")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly?>("DateApplied")
+                        .HasColumnType("date");
 
                     b.Property<string>("JobDescription")
                         .HasColumnType("nvarchar(max)");

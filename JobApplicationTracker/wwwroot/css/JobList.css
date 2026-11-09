@@ -23,7 +23,7 @@
     }
 
 
-
+    /*Graphs*/
 .chart-container {
     width: 180px;
     height: 180px;
@@ -76,4 +76,108 @@
 .success::marker {
     color: #822ABB;
     font-size: 20px;
+}
+
+
+/*Job Form Buttons*/
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.navigationLeft {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navigationRight {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+
+/*Button Design*/
+
+
+.createBtn,
+.resetBtn,
+.searchBtn {
+    display: inline-block;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+}
+
+
+.createBtn {
+    background-color: #2180a9;
+    color: white;
+}
+
+
+.resetBtn {
+    background-color: #6c757d;
+    color: white;
+}
+
+.searchBtn {
+    background-color: #2180a9;
+    color: white;
+}
+
+
+.createBtn:hover {
+    background-color: #225074;
+    color: white;
+}
+
+.resetBtn:hover {
+    background-color: #565e64;
+    color: white;
+}
+
+.searchBtn:hover {
+    background-color: #225074;
+    color: white;
+}
+
+
+
+
+/*Table (Work in progress)*/
+
+.table thead th {
+    background-color: #333333;
+    color: white;
+    padding: 12px;
+}
+
+.tableHeading {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+}
+
+.tableHeading:hover {
+    color: lightblue;
+    transform: translateY(-2px);
+
+}
+
+.tableHeading.selected {
+    color: white;
+    background-color: red;
+    border: 1px solid #0d6efd;
+    font-weight: bold;
+    transform: translateY(-2px);
+
 }

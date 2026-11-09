@@ -34,23 +34,26 @@
 
 
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 
 
 
 
 
 <form asp-action="Index" method="get" class="navigation">
-    <input type="text"
-           name="searchString"
-           value="@ViewData["CurrentFilter"]"
-           placeholder="Enter Job Name..." />
 
-    <button type="submit" class="searchBtn">Search</button>
+    <div class="navigationLeft">
+        <input type="text"
+               name="searchString"
+               value="@ViewData["CurrentFilter"]"
+               placeholder="Enter Job Name..." />
+        <button type="submit" class="searchBtn">Search</button>
+    </div>
 
-    <a asp-action="Index" class="ResetBtn">Reset Search</a>
+    <div class="navigationRight">
+        <a asp-action="Create" class="createBtn">Create New</a>
+        <a asp-action="Index" class="resetBtn">Reset Search</a>
+    </div>
+
 </form>
 
 <table class="table">
@@ -59,42 +62,49 @@
             <th>
 
                 <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSort"]"
-                   asp-route-searchString="@ViewData["CurrentFilter"]">
-                    @ViewData["NameTitle"]
+                   asp-route-searchString="@ViewData["CurrentFilter"]" class="tableHeading @(ViewData["CurrentSort"]?.ToString().StartsWith("name") == true ? "selected" : "")">
+                    @* @ViewData["NameTitle"] *@
+                    Job Role
                     
 
                 </a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CompanyName)
+                @* @Html.DisplayNameFor(model => model.CompanyName) *@
+                Company
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.JobDescription)
+                @* @Html.DisplayNameFor(model => model.JobDescription) *@
+                Description
             </th>
             <th>
                 <a asp-action="Index" asp-route-sortOrder="@ViewData["LocationSort"]"
-                   asp-route-searchString="@ViewData["CurrentFilter"]">
-                    @ViewData["LocationTitle"]
+                   asp-route-searchString="@ViewData["CurrentFilter"]" class="tableHeading @(ViewData["CurrentSort"]?.ToString().StartsWith("location") == true ? "selected" : "")">
+                    @* @ViewData["LocationTitle"] *@
+                    Location
                     
                 </a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.JobUrl)
+                @* @Html.DisplayNameFor(model => model.JobUrl) *@
+                URL
                 
  
             </th>
             <th>
                 <a asp-action="Index" asp-route-sortOrder="@ViewData["StatusSort"]"
-                   asp-route-searchString="@ViewData["CurrentFilter"]">
-                    @ViewData["StatusTitle"]
+                   asp-route-searchString="@ViewData["CurrentFilter"]" class="tableHeading @(ViewData["CurrentSort"]?.ToString().StartsWith("status") == true ? "selected" : "")">
+                    @* @ViewData["StatusTitle"] *@
+                    Status
                     
                 </a>
             </th>
             <th>
 
                 <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSort"]"
-                   asp-route-searchString="@ViewData["CurrentFilter"]">
-                    @ViewData["DateTitle"]
+                   asp-route-searchString="@ViewData["CurrentFilter"]" class="tableHeading @(ViewData["CurrentSort"]?.ToString().StartsWith("date") == true ? "selected" : "")">
+                    @* @ViewData["DateTitle"] *@
+                    Date
                     
                 </a>
             </th>

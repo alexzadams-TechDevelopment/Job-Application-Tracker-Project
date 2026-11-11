@@ -9,7 +9,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<h1 class="h1">Welcome [User]</h1>
+<h1 class="h1">Welcome</h1>
 
 <div class="dashboard">
     <div class="status-summary">
@@ -42,15 +42,16 @@
 <form asp-action="Index" method="get" class="navigation">
 
     <div class="navigationLeft">
+        <a asp-action="Create" class="createBtn">Create New</a>
+    </div>
+
+    <div class="navigationRight">
         <input type="text"
                name="searchString"
                value="@ViewData["CurrentFilter"]"
                placeholder="Enter Job Name..." />
         <button type="submit" class="searchBtn">Search</button>
-    </div>
 
-    <div class="navigationRight">
-        <a asp-action="Create" class="createBtn">Create New</a>
         <a asp-action="Index" class="resetBtn">Reset Search</a>
     </div>
 

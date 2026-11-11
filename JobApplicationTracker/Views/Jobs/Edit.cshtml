@@ -13,33 +13,38 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="JobTitle" class="control-label"></label>
+             <div class="form-group">
+                <label asp-for="JobTitle" class="control-label">Job Role</label>
                 <input asp-for="JobTitle" class="form-control" />
                 <span asp-validation-for="JobTitle" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="CompanyName" class="control-label"></label>
+                <label asp-for="CompanyName" class="control-label">Company</label>
                 <input asp-for="CompanyName" class="form-control" />
                 <span asp-validation-for="CompanyName" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="JobDescription" class="control-label"></label>
+                <label asp-for="JobDescription" class="control-label">Description</label>
                 <input asp-for="JobDescription" class="form-control" />
                 <span asp-validation-for="JobDescription" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="Location" class="control-label"></label>
+                <label asp-for="Location" class="control-label">Location</label>
                 <input asp-for="Location" class="form-control" />
                 <span asp-validation-for="Location" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="JobUrl" class="control-label"></label>
+                <label asp-for="JobUrl" class="control-label">URL</label>
                 <input asp-for="JobUrl" class="form-control" />
                 <span asp-validation-for="JobUrl" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="JobStatus" class="control-label"></label>
+                <label asp-for="JobStatus" class="control-label">Status</label>
                 <select asp-for="JobStatus" class="form-control">
                     <option value=""> Select Status</option>
                     <option value="Unapplied">Unapplied</option>
@@ -48,17 +53,20 @@
                     <option value="Rejected">Rejected</option>
                     <option value="Interview">Interview</option>
                     <option value="Success">Success</option>
-                    </select>
+                </select>
 
                 <span asp-validation-for="JobStatus" class="text-danger"></span>
             </div>
+
+
+
             <div class="form-group">
-                <label asp-for="DateApplied" class="control-label"></label>
+                <label asp-for="DateApplied" class="control-label">Date Applied</label>
                 <input asp-for="DateApplied" type="date" class="form-control" />
                 <span asp-validation-for="DateApplied" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="AdditionalNotes" class="control-label"></label>
+                <label asp-for="AdditionalNotes" class="control-label">Additional Notes</label>
                 <input asp-for="AdditionalNotes" class="form-control" />
                 <span asp-validation-for="DateApplied" class="text-danger"></span>
             </div>

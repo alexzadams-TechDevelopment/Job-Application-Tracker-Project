@@ -42,16 +42,18 @@
 <form asp-action="Index" method="get" class="navigation">
 
     <div class="navigationLeft">
-        <a asp-action="Create" class="createBtn">Create New</a>
-    </div>
-
-    <div class="navigationRight">
         <input type="text"
                name="searchString"
                value="@ViewData["CurrentFilter"]"
                placeholder="Enter Job Name..." />
-        <button type="submit" class="searchBtn">Search</button>
+        @* <button type="submit" class="searchBtn">Search</button> *@
+        
+    </div>
 
+    <div class="navigationRight">
+
+
+        <a asp-action="Create" class="createBtn">Create New</a>
         <a asp-action="Index" class="resetBtn">Reset Search</a>
     </div>
 
@@ -137,9 +139,18 @@
                 @Html.DisplayFor(model => item.DateApplied)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="crudIcon editIcon">
+                         <img src="~/Images/Icons/editIcon1.png" class="normalIcon" alt="Edit" /> <!--https://icon-icons.com/icon/pencil-striped-symbol-for-interface-edit-buttons/56782-->
+                         <img src="~/Images/Icons/editIcon2.png" class="hoverIcon" alt="" />
+                     </a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="crudIcon detailsIcon">
+                         <img src="~/Images/Icons/detailsIcon1.png" class="normalIcon" alt="Details" />  <!--https://icon-icons.com/icon/pencil-writing-on-a-paper-sheet/70422-->
+                         <img src="~/Images/Icons/detailsIcon2.png" class="hoverIcon" alt="" />
+                     </a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="crudIcon deleteIcon">
+                         <img src="~/Images/Icons/deleteIcon.png" class="normalIcon" alt="Delete" /> <!--https://icon-icons.com/icon/trash-bin-delete-remove/67981-->
+                         <img src="~/Images/Icons/deleteIcon2.png" class="hoverIcon" alt="" />
+                     </a>
             </td>
         </tr>
 }

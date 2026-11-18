@@ -31,6 +31,14 @@ body {
 }
 
 
+.navbar-brand img {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+
 .main-nav {
     display: flex;
     flex-direction: row;
@@ -117,6 +125,7 @@ body {
     /* Navbar hover*/
     .custom-navbar .nav-link:hover,
     .custom-navbar .navbar-brand:hover {
-        color: blue !important;
+        color: black !important;
+        transform: translateY(-2px);
         text-decoration: underline;
     }

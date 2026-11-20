@@ -17,16 +17,27 @@ html {
   min-height: 100%;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
 body {
     margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
     background-attachment: fixed;
     background: radial-gradient(circle at 50% 50%, #ffffff 0%, #dedede 100%) !important;
 }
 
+main {
+    flex: 1;
+}
+
 .navbar {
-    /*    background: radial-gradient(circle at 50% 50%, #ffffff 0%, #e8e8e8 100%);*/
-    background: linear-gradient(90deg, #e0eeff 0%, #ffffff 25%, #f0f7ff 50%, #ffffff 75%, #e0eeff 100%) !important;
+    /*    background: linear-gradient(90deg, #e0eeff 0%, #ffffff 25%, #f0f7ff 50%, #ffffff 75%, #e0eeff 100%) !important;*/
+    background: linear-gradient(#173B57) !important;
     height: 100px;
 }
 
@@ -98,7 +109,7 @@ body {
 
     /* navbar title */
     .custom-navbar .navbar-brand {
-        color: black;
+        color: white !important;
         font-family: Arial, sans-serif;
         font-size: 28px;
         font-weight: bold;
@@ -107,12 +118,39 @@ body {
 
     /* Navbar links */
     .custom-navbar .main-nav .nav-link {
-        color: black !important;
+        color: white !important;
         font-family: Arial, sans-serif;
         font-size: 20px;
         font-weight: 600;
     }
 
+    .registerText {
+        color: white !important;
+        font-family: Arial, sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .loginText {
+        color: white !important;
+        font-family: Arial, sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .userText {
+        color: white !important;
+        font-family: Arial, sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .logoutText {
+        color: white !important;
+        font-family: Arial, sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+    }
     /* Login and Register links */
     /*.custom-navbar .navbar-collapse > ul,
     .custom-navbar .navbar-collapse > div {
@@ -120,12 +158,30 @@ body {
         font-size: 20px !important;
         padding-right: 25px;
     }*/
-
-
     /* Navbar hover*/
     .custom-navbar .nav-link:hover,
     .custom-navbar .navbar-brand:hover {
-        color: black !important;
+        color: white !important;
         transform: translateY(-2px);
         text-decoration: underline;
     }
+
+
+    /*Navigation Bar*/
+.customFooter {
+    background-color: #173B57;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto;
+}
+.customFooter a {
+    color: white;
+    text-decoration: none;
+
+}
+
+.customFooter a:hover {
+    color: white;
+
+}
